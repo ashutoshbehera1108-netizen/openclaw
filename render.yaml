@@ -1,7 +1,9 @@
 services:
   - type: web
     name: openclaw
-    runtime: docker
+    runtime: node
+    buildCommand: npm install -g openclaw@latest
+    startCommand: openclaw gateway start
     plan: free
     healthCheckPath: /health
     envVars:
