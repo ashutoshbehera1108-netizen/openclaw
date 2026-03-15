@@ -3,7 +3,7 @@ services:
     name: openclaw
     runtime: node
     buildCommand: npm install openclaw@latest
-    startCommand: npx openclaw gateway start
+    startCommand: NODE_OPTIONS=--max-old-space-size=400 npx openclaw gateway start
     plan: free
     healthCheckPath: /health
     envVars:
