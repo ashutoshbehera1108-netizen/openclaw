@@ -4,11 +4,13 @@ services:
     runtime: node
     plan: free
     buildCommand: npm install -g openclaw@latest
-    startCommand: NODE_OPTIONS="--max-old-space-size=400" openclaw gateway start --port $PORT
+    startCommand: NODE_OPTIONS="--max-old-space-size=400" openclaw gateway start --port 8080
     healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
         value: "22"
+      - key: PORT
+        value: "8080"
       - key: SETUP_PASSWORD
         sync: false
       - key: OPENCLAW_STATE_DIR
